@@ -113,7 +113,41 @@ When you load these environments:
 3. **Don't use `toLocaleString()` for datetime-local**: It doesn't give the right format
 4. **Don't assume UTC when parsing**: `new Date("2025-12-15T14:00")` might be interpreted as local time
 
-## 🎉 Bonus Challenges
+## � Solution Goals
+
+### Primary Objectives
+1. **Fix `convertUTCToLocal()` function**
+   - Convert UTC Date to local datetime-local format
+   - Account for user's timezone offset
+   - Return proper "YYYY-MM-DDTHH:mm" format
+
+2. **Fix `convertLocalToUTC()` function**
+   - Convert local datetime string to UTC Date object
+   - Handle timezone offset correctly
+   - Ensure API receives proper UTC timestamps
+
+3. **Verify functionality**
+   - Test round-trip conversion (UTC → Local → UTC)
+   - Confirm datetime inputs show correct local times
+   - Validate API receives correct UTC times
+
+### Validation Checklist
+- [ ] UTC date `2025-12-15T14:00:00.000Z` displays correctly in user's timezone
+- [ ] Modified datetime input converts back to correct UTC
+- [ ] Console test function shows successful round-trip conversion
+- [ ] No timezone confusion when saving/loading environments
+
+### Submission Requirements
+When you complete the challenge:
+1. **Create a new branch**: `solution/your-name`
+2. **Implement the fixes** in `src/timezoneUtils.ts`
+3. **Test thoroughly** with different timezone scenarios
+4. **Submit a Pull Request** with:
+   - Clear description of your approach
+   - Any additional improvements made
+   - Screenshots/evidence of testing
+
+## �🎉 Bonus Challenges
 
 Once you've fixed the basic functionality:
 
